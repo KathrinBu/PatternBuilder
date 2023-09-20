@@ -20,8 +20,9 @@ public class Printer {
             double discount=item instanceof Food? ((Food)item).discount() : 0.0;
             double sum=calculateSum(price,packingPrice,discount);
             itemTotalPrice.add(sum);
+            System.out.println(order.getCustomerName() + ", заказ готов))");
         });
-        System.out.println("ИТОГО: " + itemTotalPrice.doubleValue()* way.getTax() + " руб.");
+        System.out.println("ИТОГО: " + itemTotalPrice.doubleValue()*way.getTax() + " руб.");
     }
     private static double calculateSum(double bill, double packingPrice, double discount){
      bill=bill+packingPrice-discount;

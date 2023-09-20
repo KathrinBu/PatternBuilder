@@ -12,7 +12,7 @@ public class ColdDrink extends Drink{
     public int calories() {
         switch (size){
             case S:
-                return 100;
+                return BeverageSize.S.getCalories();
             case M:
                 return BeverageSize.M.getCalories();
             case L:
@@ -23,7 +23,8 @@ public class ColdDrink extends Drink{
 
     @Override
     public IPacking packing() {
-        return null;
+
+        return new Mug();
     }
 
     @Override

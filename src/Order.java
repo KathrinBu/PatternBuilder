@@ -33,19 +33,13 @@ public class Order {
 //        this.foodItems=builder.items;
 //    }
 
-    public Order(List<IFoodItem> foodItems, String customerName, Way way) throws IllegalAccessException {
+    public Order(List<IFoodItem> foodItems, String customerName, Way way) {
         super();
         this.foodItems = new ArrayList<IFoodItem>(foodItems);
-        if (Objects.isNull(foodItems)){
-            throw new IllegalAccessException("вы ничего не выбрали :((");
-        }
+        this.way = way;
         this.customerName = customerName;
         if (this.customerName==null){
             this.customerName="no_name";
-        }
-        this.way = way;
-        if (Objects.isNull(way)){
-            throw new IllegalAccessException("нужно выбрать вид сервиса!!!");
         }
     }
 }

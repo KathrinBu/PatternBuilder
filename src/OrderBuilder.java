@@ -42,12 +42,7 @@ public class OrderBuilder {
         return setItems(food);
     }
     public Order build(){
-        Order order= null;
-        try {
-            order = new Order(items,customerName,way);
-        } catch (IllegalAccessException e) {
-            System.out.println(":((");;
-        }
+        Order order = new Order(items,customerName,way);
         return order;
     }
 }
